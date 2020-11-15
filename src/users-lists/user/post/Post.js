@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../../AppContext";
 import './Post.scss';
 
@@ -8,7 +8,7 @@ async function fetchPosts(userId) {
     return json;
 }
 
-export function Post() {
+export function Post(props) {
 
     const [post, setPost] = useState(null);
     const context = useContext(AppContext);
@@ -30,7 +30,7 @@ export function Post() {
               <li className="post-list">
                 {post.body}
                 <br />
-                <button>Show comments</button>
+                <button onClick={() => context.setSelectedPost(post.id)}>Show comments</button>
               </li>
             )
           }

@@ -4,15 +4,20 @@ import { ToggleButton } from './ToggleButton';
 import './App.scss';
 import { Post } from './users-lists/user/post/Post';
 import { AppContext } from './AppContext';
+import { Comment } from './users-lists/user/post/comment/Comment';
+
 
 export function App(props) {
 
-  let [ isLoggedIn, setIsLoggedIn ] = useState(false);
-  let [ selectedUser, setSelectedUser ] = useState(null);
+  const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+  const [ selectedUser, setSelectedUser ] = useState(null);
+  const [ selectedPost, setSelectedPost ] = useState(null);
 
   const appContextValue = {
     selectedUser,
     setSelectedUser,
+    selectedPost,
+    setSelectedPost,
   }
 
   if(!isLoggedIn) {
@@ -27,7 +32,7 @@ export function App(props) {
     <div className="App">
       <UsersList></UsersList>
       <Post></Post>
-      <div className="comments">Comments!</div>
+      <Comment id="5"></Comment>
     </div>
   </AppContext.Provider>
 }
