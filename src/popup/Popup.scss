@@ -1,0 +1,25 @@
+.popup {
+    .popup-window {
+        display: none;
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        color: black;
+        flex-direction: column;
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        &.shown {
+            display: flex;
+        }
+    }
+}
